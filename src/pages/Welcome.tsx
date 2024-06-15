@@ -2,20 +2,21 @@ import { Icon } from "@iconify/react/dist/iconify.js"
 import { useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useUser } from "../common/EncryptData"
+import { checkingSession } from "../common/helpers"
 
 export const Welcome = () => {
 
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(useUser()) {
-            if(!useUser().isAdmin) {
+        if (checkingSession()) {
+            if (!useUser().isAdmin) {
                 navigate('/reader')
             }
         } else {
             navigate('/login')
         }
-    },[])
+    }, [])
 
     return (
         <div className='d-flex justify-content-center w-100' id='welcome'>
