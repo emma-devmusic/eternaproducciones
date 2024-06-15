@@ -94,7 +94,7 @@
     border-radius: 10px;
 }
 
-#html5-qrcode-button-camera-stop, #html5-qrcode-button-camera-start, #html5-qrcode-button-file-selection {
+#html5-qrcode-button-camera-stop, #html5-qrcode-button-camera-start, #html5-qrcode-button-file-selection, #html5-qrcode-button-camera-permission {
     border: 1px solid transparent;
     color: white;
     border-radius: 5px;
@@ -102,9 +102,12 @@
     background-color: #DC3545;
 }
 
+#html5-qrcode-button-camera-permission {
+    margin-bottom: .8rem;
+}
+
 #html5-qrcode-button-camera-start:hover {
     background-color: #b4303d;
-
 }
 
 #html5-qrcode-anchor-scan-type-change {
