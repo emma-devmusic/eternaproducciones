@@ -94,17 +94,26 @@
     border-radius: 10px;
 }
 
-#html5-qrcode-button-camera-stop, #html5-qrcode-button-camera-start {
-    border: 1px solid white;
+#html5-qrcode-button-camera-stop, #html5-qrcode-button-camera-start, #html5-qrcode-button-file-selection {
+    border: 1px solid transparent;
+    color: white;
     border-radius: 5px;
-    margin-top: 1rem;
     padding: 5px 8px;
+    background-color: #DC3545;
+}
+
+#html5-qrcode-button-camera-start:hover {
+    background-color: #b4303d;
+
 }
 
 #html5-qrcode-anchor-scan-type-change {
     margin: 1rem 0;
 }
 
+#readerQR__dashboard_section_csr span:first-of-type {
+    margin-left: 10px;
+}
 
 #readerQR__dashboard_section_csr span {
     display: flex;
@@ -113,11 +122,19 @@
     align-items: center;
 }
 
+#readerQR__dashboard_section_csr span select {
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin-bottom: 1rem;
+}
+
 div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     background-color: #DC3545 !important;   
 }
 
+#html5-qrcode-button-file-selection {
 
+}
 
 
 /*
