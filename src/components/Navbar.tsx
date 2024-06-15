@@ -1,16 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import logo from '../assets/img/logo-text-white.png'
 import { useUser } from '../common/EncryptData';
-import { useEffect } from "react";
 
 export const Navbar = () => {
 
     const location = useLocation()
     const navigate = useNavigate();
-
-    useEffect(() => {
-
-    },[])
 
     const login = location.pathname === '/login'
 
@@ -43,7 +38,7 @@ export const Navbar = () => {
                                     <Link className="nav-link active" aria-current="page" to="/"></Link>
                                 </li>
                                 {
-                                    useUser().isAdmin &&
+                                    useUser() && useUser().isAdmin &&
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/generator">Generador</Link>
                                     </li>

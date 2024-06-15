@@ -8,8 +8,12 @@ export const Welcome = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(!useUser().isAdmin) {
-            navigate('/reader')
+        if(useUser()) {
+            if(!useUser().isAdmin) {
+                navigate('/reader')
+            }
+        } else {
+            navigate('/login')
         }
     },[])
 

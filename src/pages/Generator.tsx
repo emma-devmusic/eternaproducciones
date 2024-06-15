@@ -9,6 +9,7 @@ export const Generator = () => {
 
     const navigate = useNavigate()
     useEffect(() => {
+        if(useUser())
         if(!useUser().isAdmin) {
             navigate('/reader')
         }
