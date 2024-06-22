@@ -17,7 +17,8 @@ export const Generator = () => {
 
     const [qr, setQr] = useState<string | null>(null)
     const [values, handleInputChange] = useForm({
-        email: '',
+        // email: '',
+        idNumber: '',
         name: '',
         dni: '',
     });
@@ -53,16 +54,20 @@ export const Generator = () => {
                 <hr className='w-100 bg-white'/>
                 <form action="" onSubmit={handleCreateQR}>
                     <div className="input-group mb-3">
+                        <span className="input-group-text"><Icon icon={'f7:number-square-fill'} className='' /></span>
+                        <input value={values.idNumber} onChange={handleInputChange} name='idNumber' type="number" className="form-control" placeholder="Identificador" required/>
+                    </div>
+                    <div className="input-group mb-3">
                         <span className="input-group-text"><Icon icon={'mdi:user'} className='' /></span>
                         <input value={values.name} onChange={handleInputChange} minLength={3} name='name' type="text" className="form-control" placeholder="Nombre Completo" required/>
                     </div>
-                    <div className="input-group mb-3">
+                    {/* <div className="input-group mb-3">
                         <span className="input-group-text"><Icon icon={'mdi:email'} className='' /></span>
                         <input value={values.email} onChange={handleInputChange} name='email' type="email" className="form-control" placeholder="Correo Electróncio" required/>
-                    </div>
+                    </div> */}
                     <div className="input-group mb-3">
                         <span className="input-group-text"><Icon icon={'heroicons:identification-16-solid'} className='' /></span>
-                        <input value={values.dni} onChange={handleInputChange} name='dni' type="text" className="form-control" placeholder="DNI" required/>
+                        <input value={values.dni} onChange={handleInputChange} name='dni' type="number" className="form-control" placeholder="DNI" required/>
                     </div>
                     <input type='submit' className='btn btn-danger' minLength={7} value={'Generar QR'}/>
                 </form>
